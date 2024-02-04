@@ -16,17 +16,18 @@ export async function POST(req: NextRequest): Promise<Response> {
   //   const frameMessage = Message.decode(Buffer.from(messageBytes, "hex"));
   //   const validateResult = await hubClient.validateMessage(frameMessage);
   const ecosystem = FlockFrameType[buttonIndex];
+  console.log("Ecosystem: ", ecosystem);
 
   console.log("Ecosystem: ", ecosystem);
   return new NextResponse(
     `<!DOCTYPE html>
       <html>
         <head>
-          <title>Echo Says:</title>
           <meta name="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="${imageUrl}" />
+            <meta name="fc:frame:image" content="${imageUrl}" />
+            <meta property="og:image" content="${imageUrl}" />
             <meta name="fc:frame:post_url" content="${postUrl}" />
-            <meta name="fc:frame:button:1" content="Ask" />
+            <meta name="fc:frame:button:1" content="${ecosystem}" />
         </head>
         <body/>
       </html>`,

@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
             <meta property="og:title" content="Which ecosystem!" />
             <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
             <meta name="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta name="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
             <meta name="fc:frame:post_url" content="${postUrl}" />
             <meta name="fc:frame:input:text" content="Your question" />
             <meta name="fc:frame:button:1" content="Ethereum" />
