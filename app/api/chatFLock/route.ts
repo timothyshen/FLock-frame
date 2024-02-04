@@ -33,12 +33,6 @@ export async function POST(req: NextRequest): Promise<Response> {
           <meta name="fc:frame:button:1:action" content="post_redirect" /
         </head>
         <body/>
-      </html>`,
-    {
-      status: 200,
-      headers: {
-        "Content-Type": "text/html",
-      },
-    }
+      </html>`
   );
 }
