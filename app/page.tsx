@@ -6,40 +6,28 @@ dotenv.config();
 
 const { NEXT_PUBLIC_URL } = process.env;
 
-const frameMetadata = getFrameMetadata({
-  buttons: [
-    {
-      label: 'Tell me the story',
+export async function generateMetadata(): Promise<Metadata> {
+  const imageUrl = `${NEXT_PUBLIC_URL}/assets/FLockLogo.svg`;
+  return {
+    title: "FLock ChatBot Frame",
+    description: "This is a chatbot frame for FLock",
+    openGraph: {
+      title: "Let FLock it up",
+      images: [imageUrl],
     },
-    {
-      label: 'Redirect to cute dog pictures',
-      action: 'post_redirect',
+    other: {
+      "fc:frame": "vNext",
+      "fc:frame:image": imageUrl,
+      "fc:frame:input:text": "Do you want to learn about ecosystems?",
+      "fc:frame:button:1": "Let's go§",
     },
-  ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
-  input: {
-    text: 'Tell me a boat story',
-  },
-  post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-});
+  };
+}
 
-export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
-  description: 'LFG',
-  openGraph: {
-    title: 'zizzamia.xyz',
-    description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
-  },
-  other: {
-    ...frameMetadata,
-  },
-};
-
-export default function Page() {
+export default function Home() {
   return (
-    <>
-      <h1>zizzamia.xyz</h1>
-    </>
+    <main className="flex flex-col text-center lg:p-16">
+      Testtime
+    </main>
   );
 }
