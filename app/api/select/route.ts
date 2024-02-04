@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
     `<!DOCTYPE html>
         <html>
           <head>
-            <title>Echo Says:</title>
-            <meta property="og:title" content="Which ecosystem!" />
+            <title>Let FLock it up</title>
+            <meta property="og:title" content="Let FLock it up" />
             <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
             <meta property="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
