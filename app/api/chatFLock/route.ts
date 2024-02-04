@@ -21,7 +21,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           <title>Echo Says:</title>
           <meta name="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="${imageUrl}" />
-            <meta name="fc:frame:post_url" content="${postUrl}?ecosystem=${frameMessage}" />
+            <meta name="fc:frame:post_url" content="${postUrl}" />
             <meta name="fc:frame:input:text" content="Your question" />
             <meta name="fc:frame:button:1" content="Ask" />
         </head>
