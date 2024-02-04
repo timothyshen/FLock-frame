@@ -36,7 +36,6 @@ export async function POST(req: NextRequest) {
           <meta name="fc:frame:post_url" content="${postUrl}" />
           <meta name="fc:frame:button:1" content="Ethereum" />
           <meta name="fc:frame:button:2" content="Solana" />
-          <meta name="fc:frame:button:1:action" content="post_redirect" />
         </head>
         <body/>
       </html>`,
