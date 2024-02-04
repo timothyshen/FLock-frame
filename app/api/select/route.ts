@@ -8,6 +8,7 @@ const { NEXT_PUBLIC_URL } = process.env;
 const postUrl = `${NEXT_PUBLIC_URL}/api/code`;
 
 export async function POST(req: NextRequest) {
+  console.log("Request:", req);
   const {
     untrustedData: { inputText },
     trustedData: { messageBytes },
@@ -24,7 +25,7 @@ export async function POST(req: NextRequest) {
     }
 
     const message = inputText ?? "";
-    const imageUrl = `${NEXT_PUBLIC_URL}/assets/FLockLogo.svg`;
+    const imageUrl = `${NEXT_PUBLIC_URL}/public/assets/FLockLogo.svg`;
     return new NextResponse(
       `<!DOCTYPE html>
       <html>
@@ -36,6 +37,8 @@ export async function POST(req: NextRequest) {
           <meta name="fc:frame:post_url" content="${postUrl}" />
           <meta name="fc:frame:button:1" content="Ethereum" />
           <meta name="fc:frame:button:2" content="Solana" />
+          <meta name="fc:frame:button:3" content="Scroll" />
+          <meta name="fc:frame:button:4" content="Sui" />
         </head>
         <body/>
       </html>`,

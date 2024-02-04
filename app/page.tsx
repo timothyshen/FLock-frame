@@ -6,7 +6,7 @@ dotenv.config();
 const { NEXT_PUBLIC_URL } = process.env;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const imageUrl = `${NEXT_PUBLIC_URL}/assets/FLockLogo.svg`;
+  const imageUrl = `${NEXT_PUBLIC_URL}/public/assets/FLockLogo.svg`;
   const postUrl = `${process.env['NEXT_PUBLIC_URL']}/api/select`;
   return {
     title: "FLock ChatBot Frame",
@@ -17,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     other: {
       "fc:frame": "vNext",
+      "fc:frame:image": imageUrl,
       "fc:frame:post_url": postUrl,
       "fc:frame:input:text": "Do you want to learn about ecosystems?",
       "fc:frame:button:1": "Let's go§",
