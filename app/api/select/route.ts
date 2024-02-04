@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSSLHubRpcClient, Message } from "@farcaster/hub-nodejs";
 
-const HUB_URL = "nemes.farcaster.xyz:2283";
-const hubClient = getSSLHubRpcClient(HUB_URL);
 const { NEXT_PUBLIC_URL } = process.env;
 
 const postUrl = `${NEXT_PUBLIC_URL}/api/chatFlock`;
