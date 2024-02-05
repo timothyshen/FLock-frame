@@ -4,21 +4,46 @@ const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL; // Ensure this variable is 
 const postUrl = `${NEXT_PUBLIC_URL}/api/answer`;
 
 export async function POST(req: NextRequest) {
+  const body: { unstrustedData?: { buttonIndex: number } } = await req.json();
+
+  let buttontext = "";
+
+  if (!body.unstrustedData) {
+    return new NextResponse(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  switch (body.unstrustedData.buttonIndex) {
+    case 1:
+      buttontext = "What is Ethereum?";
+      break;
+    case 2:
+      buttontext = "What is Solana?";
+      break;
+    case 3:
+      buttontext = "What is Scroll?";
+      break;
+    case 4:
+      buttontext = "What is Sui?";
+      break;
+    default:
+      buttontext = "Unknown";
+  }
   return new NextResponse(
     `<!DOCTYPE html>
         <html>
           <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>ChatFlock Frame</title>
-              <meta property="og:title" content="ChatFlock Conversation" />
-              <meta property="og:description" content="Engage in dynamic conversations with ChatFlock." />
-              <meta property="og:image" content="YOUR_PUBLIC_URL/assets/ChatFlockLogo.svg" />
-              <!-- Farcaster specific tags, adjust as per actual implementation requirements -->
-              <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="YOUR_PUBLIC_URL/assets/ChatFlockLogo.svg" />
-              <meta property="fc:frame:post_url" content="YOUR_PUBLIC_URL/api/answer" />
-              <meta property="fc:frame:input:text" content="Type your question" />
+              <title>Let FLock it up</title>
+            <meta property="og:title" content="Let FLock it up" />
+            <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta property="fc:frame:button:1" content="${buttontext}" />
+            <meta property="fc:frame:post_url" content="${postUrl}" />
           </head>
           <body/>
         </html>`,
