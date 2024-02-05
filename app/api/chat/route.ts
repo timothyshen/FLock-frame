@@ -4,12 +4,6 @@ const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL; // Ensure this variable is 
 const postUrl = `${NEXT_PUBLIC_URL}/api/select`;
 
 export async function POST(req: NextRequest) {
-  // const body: { untrustedData: { buttonIndex: number } } = await req.json();
-  // let buttonText = "What is Solana?";
-  // if (body.untrustedData.buttonIndex === 1) {
-  //   buttonText = "What is Ethereum?";
-  // }
-
   return new NextResponse(
     `<!DOCTYPE html>
         <html>
@@ -21,9 +15,9 @@ export async function POST(req: NextRequest) {
             <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
             <meta property="fc:frame:button:1" content="what is solana" />
             <meta property="fc:frame:post_url" content="${postUrl}" />
-            </head>
-            <body/>
-            </html>`,
+          </head>
+          <body/>
+        </html>`,
     {
       status: 200,
       headers: {
@@ -32,3 +26,5 @@ export async function POST(req: NextRequest) {
     }
   );
 }
+
+export const GET = POST;

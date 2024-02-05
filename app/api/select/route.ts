@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL; // Ensure this variable is correctly set in your environment
-const postUrl = `${NEXT_PUBLIC_URL}/api/chatflock`;
+const postUrl = `${NEXT_PUBLIC_URL}/api/chat`;
 
 export async function POST(req: NextRequest) {
   return new NextResponse(
