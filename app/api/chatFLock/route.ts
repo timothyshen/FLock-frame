@@ -8,13 +8,17 @@ export async function POST(req: NextRequest) {
     `<!DOCTYPE html>
         <html>
           <head>
-            <title>Let FLock it up</title>
-            <meta property="og:title" content="Let FLock it up" />
-            <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
-            <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
-            <meta property="fc:frame:post_url" content="${postUrl}" />
-            <meta property="fc:frame:button:1" content="See Code" />
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>ChatFlock Frame</title>
+              <meta property="og:title" content="ChatFlock Conversation" />
+              <meta property="og:description" content="Engage in dynamic conversations with ChatFlock." />
+              <meta property="og:image" content="YOUR_PUBLIC_URL/assets/ChatFlockLogo.svg" />
+              <!-- Farcaster specific tags, adjust as per actual implementation requirements -->
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="YOUR_PUBLIC_URL/assets/ChatFlockLogo.svg" />
+              <meta property="fc:frame:post_url" content="YOUR_PUBLIC_URL/api/answer" />
+              <meta property="fc:frame:input:text" content="Type your question" />
           </head>
           <body/>
         </html>`,
@@ -26,3 +30,5 @@ export async function POST(req: NextRequest) {
     }
   );
 }
+
+export const GET = POST;
