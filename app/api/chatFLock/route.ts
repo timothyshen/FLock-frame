@@ -27,7 +27,6 @@ export async function POST(req: NextRequest): Promise<Response> {
           <meta property="og:image" content="${imageUrl}" />
           <meta property="fc:frame" content="vNext" />
           <meta property="fc:frame:image" content="${imageUrl}" />
-          <meta property="fc:frame:post_url" content="${postUrl}" />
           <meta name="fc:frame:button:1" content="See code" />
           <meta name="fc:frame:button:1:action" content="post_redirect" />
         </head>
