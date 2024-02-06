@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
             <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
             <meta property="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta property="fc:frame:input:text" content="What is Solana?" />
             <meta property="fc:frame:button:1" content="Ethereum" />
             <meta property="fc:frame:button:2" content="Solana" />
             <meta property="fc:frame:button:3" content="Scroll" />
