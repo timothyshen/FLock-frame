@@ -3,6 +3,7 @@ import { FlockFrameType } from "@/app/types";
 
 const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL; // Ensure this variable is correctly set in your environment
 const postUrl = `${NEXT_PUBLIC_URL}/api/select`;
+const imgeUrl = `${NEXT_PUBLIC_URL}/api/images/answer`;
 
 export async function POST(req: NextRequest) {
   const {
@@ -18,9 +19,9 @@ export async function POST(req: NextRequest) {
           <head>
             <title>Let FLock it up</title>
             <meta property="og:title" content="Let FLock it up" />
-            <meta property="og:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta property="og:image" content="${imgeUrl}" />
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="${NEXT_PUBLIC_URL}/assets/FLockLogo.svg" />
+            <meta property="fc:frame:image" content="${imgeUrl}" />
             <meta property="fc:frame:button:1" content="${button_text}" />
             <meta property="fc:frame:button:2" content="${messageBytes}" />
             <meta property="fc:frame:post_url" content="${postUrl}" />
