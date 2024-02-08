@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 // Load environment variables from .env file
 dotenv.config({ path: "./.env" }); // Make sure the path is correct
 
-async function main(prompt: string, modelName: string) {
+async function chatFlock(prompt: string, modelName: string) {
   console.log("Prompt:", prompt);
   console.log("Model:", process.env.MODEL_NAME);
 
@@ -17,13 +17,13 @@ async function main(prompt: string, modelName: string) {
     };
 
     // Set the headers
-    const endpoint = process.env.ENDPOINT; // Ensure endpoint is defined
+    const endpoint = process.env.NEXT_PUBLIC_ENDPOINT; // Ensure endpoint is defined
     if (!endpoint) {
       throw new Error("Endpoint is not defined in the environment variables.");
     }
 
     const headers = {
-      "x-api-key": process.env.FLOCK_API_KEY, // Ensure API key is set in .env
+      "x-api-key": process.env.NEXT_PUBLIC_FLOCK_API_KEY, // Ensure API key is set in .env
     };
 
     // Send POST request using axios
@@ -43,4 +43,4 @@ async function main(prompt: string, modelName: string) {
   }
 }
 
-export default main;
+export default chatFlock;

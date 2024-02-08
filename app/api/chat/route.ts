@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { FlockFrameType } from "@/app/types";
+
 
 const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL; // Ensure this variable is correctly set in your environment
 const postUrl = `${NEXT_PUBLIC_URL}/api/select`;
@@ -11,7 +11,9 @@ export async function POST(req: NextRequest) {
     trustedData: { messageBytes },
   } = await req.json();
 
-  const button_text = FlockFrameType[buttonIndex];
+  const imgeUrl = `${NEXT_PUBLIC_URL}/api/images/answer?text=${inputText}&buttonIndex=${buttonIndex}`;
+
+  
 
   return new NextResponse(
     `<!DOCTYPE html>
@@ -22,7 +24,7 @@ export async function POST(req: NextRequest) {
             <meta property="og:image" content="${imgeUrl}" />
             <meta property="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="${imgeUrl}" />
-            <meta property="fc:frame:button:1" content="${button_text}" />
+            <meta property="fc:frame:button:1" content="${modelName}" />
             <meta property="fc:frame:button:2" content="${messageBytes}" />
             <meta property="fc:frame:post_url" content="${postUrl}" />
           </head>
