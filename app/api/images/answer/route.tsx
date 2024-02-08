@@ -13,9 +13,9 @@ export async function GET(req: NextRequest) {
 
 
     const indexMapping: Map<FlockFrameType, [string, string]> = new Map([
-        [FlockFrameType.Bitcoin, ["bitcoin", process.env.NEXT_PUBLIC_MODEL_NAME_BITCOIN || ""]],
-        [FlockFrameType.Ethereum, ["ethereum", process.env.NEXT_PUBLIC_MODEL_NAME_ETHEREUM || ""]],
-        [FlockFrameType.scroll, ["scroll", process.env.NEXT_PUBLIC_MODEL_NAME_SCROLL || ""]],
+        [FlockFrameType.Bitcoin, ["bitcoin", process.env.MODEL_NAME_BITCOIN || ""]],
+        [FlockFrameType.Ethereum, ["ethereum", process.env.MODEL_NAME_ETHEREUM || ""]],
+        [FlockFrameType.scroll, ["scroll", process.env.MODEL_NAME_SCROLL || ""]],
     ]);
 
 
