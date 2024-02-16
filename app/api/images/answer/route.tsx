@@ -13,9 +13,9 @@ export async function GET(req: NextRequest) {
 
 
     const indexMapping: Map<FlockFrameType, [string, string]> = new Map([
-        [FlockFrameType.Bitcoin, ["bitcoin", process.env.MODEL_NAME_BITCOIN || ""]],
-        [FlockFrameType.Ethereum, ["ethereum", process.env.MODEL_NAME_ETHEREUM || ""]],
-        [FlockFrameType.scroll, ["scroll", process.env.MODEL_NAME_SCROLL || ""]],
+        [FlockFrameType.Bitcoin, ["bitcoin", process.env.NEXT_PUBLIC_MODEL_NAME_BITCOIN || ""]],
+        [FlockFrameType.Ethereum, ["ethereum", process.env.NEXT_PUBLIC_MODEL_NAME_ETHEREUM || ""]],
+        [FlockFrameType.scroll, ["scroll", process.env.NEXT_PUBLIC_MODEL_NAME_SCROLL || ""]],
     ]);
 
 
@@ -47,37 +47,37 @@ export async function GET(req: NextRequest) {
         >
             <h1
                 style={{
-                    fontSize: "2em", // Set font size to 2em
-                    color: "black", // Set text color to black
-                    fontWeight: "bold", // Set font weight to bold
+                    fontSize: "2em", 
+                    color: "black", 
+                    fontWeight: "bold", 
                 }}>Answer</h1>
             <p style={{
-                color: "black", // Set text color to black
+                color: "black", 
 
             }}>Here is the model you called {modelName}</p>
             <div
                 style={{
-                    display: "flex", // Use flex layout
-                    flexDirection: "row", // Align items vertically
-                    alignItems: "center", // Center items horizontally
-                    justifyContent: "center", // Center items vertically
-                    gap: "10px", // Add 10px gap between items
+                    display: "flex", 
+                    flexDirection: "row", 
+                    alignItems: "center", 
+                    justifyContent: "center", 
+                    gap: "10px", 
                 }}
             >
                 <h2>Your Question:</h2>
                 <p
                     style={{
-                        fontSize: "1em", // Set font size to 1.5em
-                        color: "black", // Set text color to black
+                        fontSize: "1em", 
+                        color: "black", 
                     }}>{inputText}</p>
             </div>
 
             <h3>Answer:</h3>
             <p
                 style={{
-                    fontSize: "1.5em", // Set font size to 1.5em
-                    color: "black", // Set text color to black
-                    padding: "10px", // Add padding around the text
+                    fontSize: "1.5em", 
+                    color: "black", 
+                    padding: "10px", 
                 }}>
                 {response.answer}
             </p>

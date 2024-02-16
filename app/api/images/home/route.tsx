@@ -24,28 +24,8 @@ export async function GET(req: NextRequest) {
                     fontSize: "2em",
                     color: "black",
                     fontWeight: "bold",
-                }}>Answer</h1>
-            <p style={{
-                color: "black",
-            }}>How to use it</p>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "10px",
-                }}
-            >
-                <ol style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    fontSize: "1em",
-                }}>
-                    <li>Ask a question</li>
-                    <li>Select a chatbot with the button</li>
-                </ol>
-            </div>
+                }}>Welcome to FLock Frame</h1>
+
         </div>
     ));
 }
